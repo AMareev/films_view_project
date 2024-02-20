@@ -1,3 +1,4 @@
 export * from './select-poster';
 export * from './select-title';
-export * from './select-raiting';
+export * from './select-rating';
+export * from './select-movies-state';

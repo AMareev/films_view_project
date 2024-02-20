@@ -2,7 +2,7 @@ import { useDispatch } from 'react-redux';
 import { StarIcon } from '@heroicons/react/24/solid';
 import { setRatingAction } from 'actions';
 
-export const FilmControl = () => {
+export const FilmControl = ({ children }) => {
     const dispach = useDispatch();
 
     const setRating = (event) => {
@@ -11,6 +11,7 @@ export const FilmControl = () => {
     };
     return (
         <div className='flex'>
+            <div>{children}/5</div>
             {Array(5)
                 .fill()
                 .map((_, index) => (

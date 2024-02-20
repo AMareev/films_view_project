@@ -1,17 +1,10 @@
-const initialState = {
-    films: {},
-};
-
-//todo! Переписать на массив
-// const initialState = [];
+const initialState = [];
 
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_INITIAL_STATE': {
-            return {
-                ...state,
-                films: action.payload,
-            };
+            console.log('otvet', action.payload);
+            return action.payload;
         }
 
         case 'SET_RATING': {
@@ -20,7 +13,7 @@ export const reducer = (state = initialState, action) => {
                 ...state,
                 films: {
                     ...state.films,
-                    raiting: action.payload,
+                    rating: action.payload,
                 },
             };
         }

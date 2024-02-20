@@ -1,1 +1,1 @@
-export const selelectTitle = (state) => state.films.title;
+export const selelectTitle = (state) => state.films?.title;

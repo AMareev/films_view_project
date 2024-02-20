@@ -1,22 +1,28 @@
 import { useSelector } from 'react-redux';
-import {
-    selectPosterUrl,
-    selelectTitle,
-    selectRaiting,
-} from '../../selectors/';
+import { selectMoviesState } from '../../selectors/';
 import { FilmControl } from './film-control';
 
 export const Films = () => {
-    const title = useSelector(selelectTitle);
-    const posterURL = useSelector(selectPosterUrl);
-    const raiting = useSelector(selectRaiting);
+    const movies = useSelector(selectMoviesState);
+
+    console.log('movieliset', movies);
 
     return (
-        <div>
-            <div>Title : {title}</div>
-            <div>Poster : {posterURL}</div>
-            <div>Raiting : {raiting}</div>
-            <FilmControl />
+        <div className='flex flex-row'>
+            {movies.map(({ id, title, rating }) => {
+                console.log('inside map', id);
+
+                return (
+                    <div>
+                        <div key={id} id={id}>
+                            <div>title: {title}</div>
+                            <div>description: {title}</div>
+                            <div>rating: {rating}</div>
+                            <FilmControl>{rating}</FilmControl>
+                        </div>
+                    </div>
+                );
+            })}
         </div>
     );
 };

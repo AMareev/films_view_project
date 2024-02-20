@@ -1,1 +1,1 @@
-export const selectPosterUrl = (state) => state.films.posterUrl;
+export const selectPosterUrl = (state) => state.films?.posterUrl;
