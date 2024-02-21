@@ -3,18 +3,23 @@ const initialState = [];
 export const reducer = (state = initialState, action) => {
     switch (action.type) {
         case 'SET_INITIAL_STATE': {
-            console.log('otvet', action.payload);
-            return action.payload;
+            // return action.payload;
+
+            return { movies: action.payload };
         }
 
         case 'SET_RATING': {
-            console.log('into reducer');
             return {
                 ...state,
-                films: {
-                    ...state.films,
-                    rating: action.payload,
-                },
+                movies: state.movies.map((movie, index) => {
+                    if (Number(index) === Number(action.filmIndex)) {
+                        return {
+                            ...movie,
+                            rating: action.payload,
+                        };
+                    }
+                    return movie;
+                }),
             };
         }
 

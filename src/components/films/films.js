@@ -4,21 +4,21 @@ import { FilmControl } from './film-control';
 
 export const Films = () => {
     const movies = useSelector(selectMoviesState);
-
-    console.log('movieliset', movies);
+    console.log('movies', movies);
+    // const movies = selectMoviesState;
 
     return (
         <div className='flex flex-row'>
-            {movies.map(({ id, title, rating }) => {
-                console.log('inside map', id);
-
+            {movies?.map(({ id, title, rating }, index) => {
                 return (
                     <div>
                         <div key={id} id={id}>
                             <div>title: {title}</div>
                             <div>description: {title}</div>
                             <div>rating: {rating}</div>
-                            <FilmControl>{rating}</FilmControl>
+                            <FilmControl filmIndex={index}>
+                                {rating}
+                            </FilmControl>
                         </div>
                     </div>
                 );
