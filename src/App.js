@@ -1,7 +1,8 @@
 import { useEffect } from 'react';
 import { Films } from './components/films/films';
-import { GetDataFromServer } from 'hooks';
+// import { GetDataFromServer } from 'hooks';
 import { useDispatch } from 'react-redux';
+import { GetDataFromServer } from 'actions';
 
 function App() {
     const dispatch = useDispatch();

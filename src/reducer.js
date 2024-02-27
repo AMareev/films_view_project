@@ -11,6 +11,7 @@ export const reducer = (state = initialState, action) => {
         case 'SET_RATING': {
             return {
                 ...state,
+                // @ts-ignore
                 movies: state.movies.map((movie, index) => {
                     if (Number(index) === Number(action.filmIndex)) {
                         return {

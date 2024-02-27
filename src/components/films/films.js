@@ -4,7 +4,7 @@ import { FilmControl } from './film-control';
 
 export const Films = () => {
     const movies = useSelector(selectMoviesState);
-    console.log('movies', movies);
+
     // const movies = selectMoviesState;
 
     return (

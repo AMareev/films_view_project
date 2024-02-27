@@ -1,2 +1,2 @@
-export * from './set-rating';
-export * from './set-initial-state';
+export * from './get-data';
+export * from './put-data';

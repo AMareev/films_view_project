@@ -1,17 +1,13 @@
 import { useDispatch } from 'react-redux';
 import { StarIcon } from '@heroicons/react/24/solid';
-import { setRatingAction } from 'actions';
+// import { setRatingAction } from 'actions';
+import { putDataToServer } from 'actions';
 
 export const FilmControl = ({ filmIndex, children }) => {
     const dispach = useDispatch();
-
-    const setRating = (event) => {
-        dispach(
-            setRatingAction(
-                event.currentTarget.dataset.filmIndex,
-                event.currentTarget.id
-            )
-        );
+    const changeRating = (event) => {
+        // @ts-ignore
+        dispach(putDataToServer(event));
     };
 
     return (
@@ -30,7 +26,7 @@ export const FilmControl = ({ filmIndex, children }) => {
                         key={index}
                         id={`${index + 1}`}
                         data-film-index={filmIndex}
-                        onClick={setRating}></StarIcon>
+                        onClick={changeRating}></StarIcon>
                 ))}
         </div>
     );
